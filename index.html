@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Road Construction - Civil Engineering Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <header>
+                <h1>Auto Road System</h1>
+                <p class="subtitle">Pathfinding with Civil Engineering Constraints</p>
+            </header>
+
+            <div class="panel">
+                <h2>Terrain DEM Data</h2>
+                <p class="desc">Upload a GeoTIFF (.tif) file or load the sample terrain (output_SRTMGL3.tif).</p>
+                <input type="file" id="demUpload" accept=".tif,.tiff">
+                <button type="button" id="loadSampleBtn" class="btn-secondary" onclick="loadSampleDEM()">Load Sample DEM (output_SRTMGL3.tif)</button>
+                <div id="scaleInfo" class="meta-tag">Scale: Not Loaded</div>
+            </div>
+
+            <div class="panel">
+                <h2>Cost Parameters</h2>
+                <label>Road Cost ($/m): <span id="roadCostVal">10</span></label>
+                <input type="range" id="roadCost" min="5" max="100" value="10">
+
+                <label>Bridge Cost ($/m): <span id="bridgeCostVal">50</span></label>
+                <input type="range" id="bridgeCost" min="20" max="300" value="50">
+
+                <label>Total Budget ($): <span id="budgetVal">50,000</span></label>
+                <input type="range" id="budget" min="2000" max="250000" step="1000" value="50000">
+            </div>
+
+            <div class="panel">
+                <h2>Civil Engineering Limits</h2>
+                <label>Max Slope (%): <span id="maxSlopeVal">25</span>%</label>
+                <input type="range" id="maxSlope" min="5" max="65" value="25">
+
+                <label>Max Bridge Span (m): <span id="maxBridgeVal">300</span> m</label>
+                <input type="range" id="maxBridge" min="20" max="1000" step="20" value="300">
+
+                <label>Max Number of Bridges: <span id="maxBridgesVal">5</span></label>
+                <input type="range" id="maxBridges" min="1" max="10" value="5">
+            </div>
+
+            <div class="panel actions">
+                <button type="button" id="resetBtn" class="btn-danger" onclick="resetPoints()">Clear Points (A & B)</button>
+            </div>
+
+            <div class="panel results">
+                <h2>Route Analysis</h2>
+                <div class="status-box">
+                    <span class="status-label">Status:</span>
+                    <span id="status" class="status-val">Waiting for DEM...</span>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <span class="metric-title">Total Cost</span>
+                        <span class="metric-val">$<span id="pathCost">0.00</span></span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-title">Bridges Placed</span>
+                        <span class="metric-val"><span id="bridgeCount">0</span> / <span id="maxBridgesDisplay">5</span></span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-title">Road Length</span>
+                        <span class="metric-val"><span id="roadLength">0</span> m</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-title">Bridge Length</span>
+                        <span class="metric-val"><span id="bridgeLength">0</span> m</span>
+                    </div>
+                </div>
+
+                <div class="cost-breakdown">
+                    <p>Road Cost: <strong>$<span id="roadCostTotal">0.00</span></strong></p>
+                    <p>Bridge Cost: <strong>$<span id="bridgeCostTotal">0.00</span></strong></p>
+                    <p>Max Path Slope: <strong><span id="routeMaxSlope">0.0</span>%</strong></p>
+                </div>
+
+                <div class="legend">
+                    <div class="legend-item"><span class="color-box" style="background: #2E8B57;"></span> Lowland</div>
+                    <div class="legend-item"><span class="color-box" style="background: #8FBC8F;"></span> Grassland</div>
+                    <div class="legend-item"><span class="color-box" style="background: #DEB887;"></span> Hills</div>
+                    <div class="legend-item"><span class="color-box" style="background: #A0522D;"></span> Steep Slope</div>
+                    <div class="legend-item"><span class="color-box" style="background: #f0f0f0;"></span> High Peaks</div>
+                    <div class="legend-item"><span class="color-box" style="background: #00bcd4;"></span> River/Water</div>
+                    <div class="legend-item"><span class="color-box" style="background: #ffff00; border: 1px solid #000;"></span> Road</div>
+                    <div class="legend-item"><span class="color-box" style="background: #ff4500; border: 1px dashed #fff;"></span> Bridge</div>
+                </div>
+            </div>
+
+            <p class="instructions">Click on map to place Start (A) and End (B) points.</p>
+        </aside>
+
+        <main class="map-container">
+            <canvas id="terrainCanvas" width="800" height="600"></canvas>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/geotiff"></script>
+    <script src="terrain.js?v=7"></script>
+    <script src="astar.js?v=7"></script>
+    <script src="app.js?v=7"></script>
+</body>
+</html>
