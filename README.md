@@ -14,7 +14,7 @@
   <strong>An interactive civil engineering simulation that computes optimal, budget-conscious road corridors and bridge placements across mountainous terrain using real NASA/USGS Digital Elevation Models.</strong>
 </p>
 
-[Explore Features](#-key-features) • [System Architecture](#-system-architecture) • [Mathematical Model](#-engineering--mathematical-model) • [Quick Start](#-quick-start) • [Controls Guide](#-control-parameters-guide)
+[Explore Features](#-key-features) • [System Architecture](#-system-architecture) • [Quick Start](#-quick-start) • [Controls Guide](#-control-parameters-guide)
 
 </div>
 
@@ -105,35 +105,6 @@ flowchart TD
     J --> L["HTML5 Canvas Overlay (Road: Yellow, Bridge: Orange)"]
     J --> M["Real-Time Analytics Grid"]
 ```
-
----
-
-## 📐 Engineering & Mathematical Model
-
-### 1. Longitudinal Slope Gradient
-For any transition between adjacent cells $(x_1, y_1)$ and $(x_2, y_2)$ on an 8-connected grid with cell physical dimension $s$:
-
-$$\text{Horizontal Step } d = s \cdot \begin{cases} 1.0 & \text{for cardinal moves} \\ \sqrt{2} & \text{for diagonal moves} \end{cases}$$
-
-$$\text{Longitudinal Slope Grade } S = \left( \frac{|z(x_2, y_2) - z(x_1, y_1)|}{d} \right) \times 100$$
-
-A candidate transition is pruned immediately if $S > S_{\max}$.
-
-### 2. D8 Flow Accumulation Hydrology
-For each cell $i$, the steepest descent neighbor $j$ is identified across its 8-neighborhood $\mathcal{N}_8(i)$:
-
-$$j = \arg\max_{k \in \mathcal{N}_8(i)} \left( \frac{z_i - z_k}{d_{ik}} \right)$$
-
-Cells are topologically sorted in descending order of elevation, and runoff volume is accumulated down-gradient:
-
-$$\text{Acc}(j) \leftarrow \text{Acc}(j) + \text{Acc}(i)$$
-
-Cells with accumulated flow exceeding threshold $\tau_{\text{stream}}$ are classified as active drainage channels requiring bridge spans.
-
-### 3. Octile Distance Heuristic
-To guide $A^*$ efficiently through 8-connected grid space with physical unit costs:
-
-$$h(n) = \Big( \max(\Delta x, \Delta y) + (\sqrt{2} - 1) \min(\Delta x, \Delta y) \Big) \times s \times C_{\text{road}}$$
 
 ---
 
