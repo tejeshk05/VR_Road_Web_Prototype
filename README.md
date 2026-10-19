@@ -3,6 +3,7 @@
 # 🛣️ Auto Road Construction System
 ### *Autonomous Highway Alignment & Bridge Pathfinding Engine on Real-World GeoTIFF Topography*
 
+[![Institution: IIT Mandi](https://img.shields.io/badge/IIT%20Mandi-Research%20Internship-ff6f00.svg)](https://www.iitmandi.ac.in)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![HTML5 Canvas](https://img.shields.io/badge/HTML5-Canvas-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
@@ -12,10 +13,35 @@
 
 <p align="center">
   <strong>An interactive civil engineering simulation that computes optimal, budget-conscious road corridors and bridge placements across mountainous terrain using real NASA/USGS Digital Elevation Models.</strong>
+  <br/>
+  <em>Developed as a Research Internship Project at the <strong>Indian Institute of Technology Mandi (IIT Mandi)</strong> under the guidance of <strong>Dr. Parimala Kancharla</strong> (School of Computing and Electrical Engineering).</em>
 </p>
 
-[Explore Features](#-key-features) • [System Architecture](#-system-architecture) • [Quick Start](#-quick-start) • [Controls Guide](#-control-parameters-guide)
+[Academic Affiliation](#️-academic--research-affiliation) • [Explore Features](#-key-features) • [System Architecture](#-system-architecture) • [Quick Start](#-quick-start) • [Controls Guide](#-control-parameters-guide)
 
+</div>
+
+---
+
+## 🏛️ Academic & Research Affiliation
+
+This project was researched and engineered during an official academic research internship at the **Indian Institute of Technology Mandi (IIT Mandi)**, Himachal Pradesh, India.
+
+| Detail | Specification |
+| :--- | :--- |
+| **Project Title** | **Auto Road Construction Using Pathfinding Algorithms with Civil Engineering Constraints** |
+| **Host Institution** | **Indian Institute of Technology Mandi (IIT Mandi)** |
+| **Department** | School of Computing and Electrical Engineering (SCEE) |
+| **Faculty Guide & Supervisor** | **Dr. Parimala Kancharla**, Assistant Professor, SCEE, IIT Mandi |
+| **Student Researcher** | **D. Tejesh Kumar** (AI & Data Science, KLEF Hyderabad) |
+| **Tenure** | December 1, 2024 – May 25, 2025 |
+| **Certificate of Internship** | [View Verified PDF](./docs/IIT_Mandi_Internship_Certificate.pdf) |
+
+<br/>
+
+<div align="center">
+  <img src="./docs/IIT_Mandi_Internship_Certificate.png" alt="IIT Mandi Internship Certificate - D. Tejesh Kumar" width="620" style="border: 1px solid #3f3f46; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.4);" />
+  <p><em>Official Certificate of Internship issued by the Indian Institute of Technology Mandi</em></p>
 </div>
 
 ---
@@ -171,18 +197,20 @@ Right-click `index.html` and select **"Open with Live Server"**.
 ```text
 VR_Road_Web_Prototype/
 ├── docs/
-│   └── screenshots/
-│       ├── route_overview.png     # Full route visualization across mountain terrain
-│       └── route_analysis.png     # Metric dashboard & civil feasibility results
-├── app.js                         # Application controller, canvas events, UI bindings
-├── astar.js                       # 3D A* pathfinder with slope, bridge & curvature limits
-├── terrain.js                     # GeoTIFF bilinear interpolator & D8 hydrology simulation
-├── style.css                      # Modern dark-mode UI styling & responsive layout
-├── index.html                     # Semantic HTML5 layout, controls, canvas viewport
-├── output_SRTMGL3.tif             # Sample 6.6MB SRTM Digital Elevation Model
-├── .gitignore                     # Git ignore rules for clean repo maintenance
-├── LICENSE                        # MIT Open Source License
-└── README.md                      # Comprehensive project documentation
+│   ├── screenshots/
+│   │   ├── route_overview.png                # Full route visualization across mountain terrain
+│   │   └── route_analysis.png                # Metric dashboard & civil feasibility results
+│   ├── IIT_Mandi_Internship_Certificate.pdf  # Verified IIT Mandi internship certificate
+│   └── IIT_Mandi_Internship_Certificate.png  # Certificate document preview
+├── app.js                                    # Application controller, canvas events, UI bindings
+├── astar.js                                  # 3D A* pathfinder with slope, bridge & curvature limits
+├── terrain.js                                # GeoTIFF bilinear interpolator & D8 hydrology simulation
+├── style.css                                 # Modern dark-mode UI styling & responsive layout
+├── index.html                                # Semantic HTML5 layout, controls, canvas viewport
+├── output_SRTMGL3.tif                        # Sample 6.6MB SRTM Digital Elevation Model
+├── .gitignore                                # Git ignore rules for clean repo maintenance
+├── LICENSE                                   # MIT Open Source License
+└── README.md                                 # Comprehensive project documentation
 ```
 
 ---
@@ -193,14 +221,18 @@ This project is licensed under the [MIT License](LICENSE) - see the LICENSE file
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Author & Acknowledgments
 
-**D. Tejesh Kumar**
-- GitHub: [@tejeshk05](https://github.com/tejeshk05)
+**D. Tejesh Kumar**  
+*Department of Artificial Intelligence & Data Science, Koneru Lakshmaiah Education Foundation (KLEF), Hyderabad*  
+- GitHub: [@tejeshk05](https://github.com/tejeshk05)  
 - Email: [dtejeshk@gmail.com](mailto:dtejeshk@gmail.com)
+
+### 🎓 Academic Mentorship & Supervision
+Special thanks and sincere gratitude to **Dr. Parimala Kancharla** (Assistant Professor, School of Computing and Electrical Engineering, Indian Institute of Technology Mandi) for mentorship, research guidance, and domain supervision throughout this project.
 
 ---
 
 <div align="center">
-  <sub>Built with engineering precision using JavaScript, HTML5 Canvas, and Open Geospatial Data.</sub>
+  <sub>Researched at Indian Institute of Technology Mandi (IIT Mandi) • Built with JavaScript, HTML5 Canvas, and Geospatial Data.</sub>
 </div>
