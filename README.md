@@ -8,13 +8,14 @@
 [![HTML5 Canvas](https://img.shields.io/badge/HTML5-Canvas-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 [![GIS Topography](https://img.shields.io/badge/GIS-GeoTIFF%20%2F%20DEM-2E8B57?logo=qgis&logoColor=white)](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm)
 [![Hydrology](https://img.shields.io/badge/Hydrology-D8%20Flow%20Accumulation-00bcd4)](https://en.wikipedia.org/wiki/Flow_accumulation)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-2ea44f?logo=githubpages&logoColor=white)](https://tejeshk05.github.io/VR_Road_Web_Prototype/)
 [![Status](https://img.shields.io/badge/Status-Active%20Prototype-success)](#)
 
 <p align="center">
   <strong>An interactive civil engineering simulation that computes optimal, budget-conscious road corridors and bridge placements across mountainous terrain using real NASA/USGS Digital Elevation Models.</strong>
 </p>
 
-[Explore Features](#-key-features) • [System Architecture](#-system-architecture) • [Mathematical Model](#-engineering--mathematical-model) • [Quick Start](#-quick-start) • [Controls Guide](#-control-parameters-guide)
+[🚀 Live Web Demo](https://tejeshk05.github.io/VR_Road_Web_Prototype/) • [Explore Features](#-key-features) • [System Architecture](#-system-architecture) • [Mathematical Model](#-engineering--mathematical-model) • [Quick Start](#-quick-start) • [Controls Guide](#-control-parameters-guide)
 
 </div>
 
